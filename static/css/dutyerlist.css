@@ -1,0 +1,74 @@
+#dutyerlist-modal-body {
+  display: flex; /* 使用弹性布局 左右布局 */
+}
+
+.dutyerlistcontainer {
+  width: max-content;
+  min-width: fit-content;
+  flex: 1; /* 占据剩余空间 */
+}
+
+.duty-list {
+  min-width: fit-content;
+  margin: 10vh auto;
+  text-align: center;
+  padding: 0 0.5rem 1.5rem 0.5rem;
+  border: rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+}
+
+.p-head {
+  margin: 0rem 1.5rem;
+  padding: 2.5rem 1.5rem 0 1.5rem;
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #09a599;
+}
+
+.duty-list-content {
+  margin: 1rem 1.5rem;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.right-nav-list {
+  position: sticky; /* 使用粘性定位 */
+  top: 10vh;
+  right: 0;
+  /* bottom: 0;  */
+  /* width: 10rem; */
+  padding: 1rem 0.5rem 1rem 1rem;
+  /* margin: 0.5rem; */
+  margin-left: auto;
+}
+
+.fixed-right {
+  max-height: 50vh;
+  overflow-y: auto;
+  text-align: center;
+  border: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.fixed-right .nav-item {
+}
+
+.fixed-right .nav-link {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #09a599;
+  display: block;
+  padding: 0.5rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.fixed-right .nav-link:hover {
+  background-color: #f5f5f5;
+  color: #e76c84;
+  /* 添加鼠标悬停时的文本颜色 */
+}
