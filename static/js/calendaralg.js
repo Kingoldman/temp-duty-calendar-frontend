@@ -245,7 +245,8 @@ export const duty_first = (
         all_duty_list[_full_pointer]["duty_type"] === _duty_type
       )
     ) {
-      arr_not_use.push(all_duty_list[_full_pointer]); //指针跑过去了，加入待选
+      //新的规则 只值单班的人员，遇type不匹配，直接跳过，不加入待选
+      // arr_not_use.push(all_duty_list[_full_pointer]); //指针跑过去了，加入待选
       _full_pointer = (_full_pointer + 1) % duty_all_len;
       cnt++;
     }
@@ -335,7 +336,10 @@ export const duty_second = (
         all_duty_list[_full_pointer]["gender"] === pre_gender
       )
     ) {
-      arr_not_use.push(all_duty_list[_full_pointer]); //指针跑过去了，加入待选
+      //新的规则 只值单班的人员，遇type不匹配，直接跳过，不加入待选，第二个人只考虑性别条件即可
+      if (all_duty_list[_full_pointer]["gender"] !== pre_gender) {
+        arr_not_use.push(all_duty_list[_full_pointer]); //指针跑过去了，加入待选
+      }
 
       _full_pointer = (_full_pointer + 1) % duty_all_len;
 
