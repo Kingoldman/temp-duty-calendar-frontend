@@ -628,14 +628,18 @@ export const makeDuty = async (list) => {
       have_this_month_leader_duty = true;
     } else {
       // 没的话就找一次上一月的，再没有就找原始的
-      [all_duty_list, leaderdutyers] = await everymonthdutyerqueue(
-        `${l_year}-${last_month}-1`
-      );
-      if (all_duty_list.length === 0) {
-        //alert(`${year}年${month}月排班未出，采用目前人员预排，后续会有变动。`);
-        all_duty_list = await requestoriginpersons();
-        leaderdutyers = await requestleaderdutyers();
-      }
+      // [all_duty_list, leaderdutyers] = await everymonthdutyerqueue(
+      //   `${l_year}-${last_month}-1`
+      // );
+      // if (all_duty_list.length === 0) {
+      //   //alert(`${year}年${month}月排班未出，采用目前人员预排，后续会有变动。`);
+      //   all_duty_list = await requestoriginpersons();
+      //   leaderdutyers = await requestleaderdutyers();
+      // }
+
+      // 直接找原始的算了
+      all_duty_list = await requestoriginpersons();
+      leaderdutyers = await requestleaderdutyers();
     }
 
     duty_all_len = all_duty_list.length;
